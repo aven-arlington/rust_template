@@ -1,0 +1,26 @@
+[package]
+name = "money_meter"
+description = "Simple utility to help manage my personal finances"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+default-run = "money_meter"
+
+[features]
+default = ["tracing"]
+tracing = ["dep:tracing", "dep:tracing-subscriber"]
+
+[dependencies]
+data_store = { path = "../data_store" }
+clap = { version = "4.*", features = ["derive", "string", "env"] }
+tracing = { version = "0.1", optional = true }
+tracing-subscriber = { version = "0.3", optional = true }
+
+[[bin]]
+name = "money_meter"
+path = "src/main.rs"
+
+[lib]
+name = "front_end"
+path = "src/lib.rs"

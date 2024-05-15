@@ -1,0 +1,13 @@
+[package]
+name = "data_store"
+description = "Backend database functionality"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+
+[lib]
+name = "data_store"
+path = "src/lib.rs"
